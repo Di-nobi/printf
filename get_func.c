@@ -5,14 +5,14 @@
  * Return: a function to be returned
  */
 
-int (*get_func(char s))(va_list args)
+int (*get_func(char s))(va_list)
 {
         node_t arr[] = {
                 {"c", print_c},
-                {"s", print_string},
-                {"d", print_decimal},
-                {"i", print_integer},
-                {"b", print_binary},
+                {"s", print_s},
+                {"d", print_d},
+                {"i", print_i},
+                {"b", print_b},
 		{"%", print_percent},
                 {NULL, NULL}
         };

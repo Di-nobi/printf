@@ -1,6 +1,7 @@
 #ifndef _MAIN_
 #define _MAIN_
 
+#include <stdlib.h>
 #include <stddef.h>
 #include <unistd.h>
 #include <stdarg.h>
@@ -23,12 +24,12 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int print_c(va_list args);
 int (*get_func(char s))(va_list args);
-int print_string(va_list args);
-int print_decimal(va_list args);
-int print_integer(va_list args);
-int print_binary(va_list args);
+int print_s(va_list args);
+int print_d(va_list args);
+int print_i(va_list args);
+int print_b(va_list args);
 int print_u(va_list args);
-int print_octal(va_list args);
+int print_o(va_list args);
 int print_x(va_list args);
 int print_X(va_list args);
 int print_percent(va_list args);
