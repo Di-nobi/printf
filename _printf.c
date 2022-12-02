@@ -43,11 +43,10 @@ else
 }
 }
 else
-{
-        num = num + _putchar(format[i]);
-}
+
+	num = num + _putchar(format[i]);
 }
 va_end(args);
-
+}
 return (num);
 }
