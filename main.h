@@ -1,6 +1,7 @@
 #ifndef _MAIN_
 #define _MAIN_
 
+#include <stddef.h>
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdio.h>
@@ -30,5 +31,5 @@ int print_u(va_list args);
 int print_octal(va_list args);
 int print_x(va_list args);
 int print_X(va_list args);
-
+int print_percent(va_list args);
 #endif

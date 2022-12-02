@@ -24,29 +24,28 @@ int _printf(const char *format, ...)
         num = 0;
 
         for (i = 0; format[i] != '\0'; i++)
-{
-        if (format[i] == '%')
-{
-        if (format[i + 1] == '%')
-{
-        num = num + _putchar(format[1]);
-        i++;
-}
-else
-{
-        p = get_func(format[i + 1]);
-        if (p)
-                num = num + p(args);
-        else
-                num = _putchar(format[i]) + _putchar(format[i + 1]);
-	   i++;
-}
-}
-else
-
-	num = num + _putchar(format[i]);
-}
-va_end(args);
+	{
+		if (format[i] == '%')
+		{
+			if (format[i + 1] == '%')
+			{
+				num = num + _putchar(format[1]);
+				i++;
+			}
+			else
+			{
+				p = get_func(format[i + 1]);
+				if (p)
+					num = num + p(args);
+				else
+					num = _putchar(format[i]) + _putchar(format[i + 1]);
+				i++;
+			}
+		}
+		else
+			num = num + _putchar(format[i]);
+	}
+	va_end(args);
 }
 return (num);
 }
