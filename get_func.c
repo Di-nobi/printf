@@ -5,7 +5,7 @@
  * Return: a function to be returned
  */
 
-int (*get_func(char s))(va_list)
+int (*get_func(char s))(va_list args)
 {
         node_t node[] = {
                 {"c", print_c},
