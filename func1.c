@@ -18,7 +18,7 @@ int print_c(va_list args)
  * @args: decimal argument
  * Return: counter
  */
-int print_decimal(va_list args)
+int print_d(va_list args)
 {
 
 	unsigned int absolute, aux, countnum, count;
@@ -65,7 +65,7 @@ int print_integer(va_list args)
  * @args: string  argument
  * Return: number of characters
  */
-int print_string(va_list args)
+int print_s(va_list args)
 {
 	int i, count = 0;
 	char *str;

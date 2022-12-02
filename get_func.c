@@ -7,7 +7,7 @@
 
 int (*get_func(char s))(va_list)
 {
-        node_t arr[] = {
+        node_t node[] = {
                 {"c", print_c},
                 {"s", print_s},
                 {"d", print_d},
@@ -19,10 +19,10 @@ int (*get_func(char s))(va_list)
 
         int j;
 	
-	for (j = 0; arr[j].c != NULL; j++)
+	for (j = 0; node[j].c != NULL; j++)
 {
-               if (arr[j].c[0] == s)
-              	return (arr[j].f);
+               if (*node[j].c[0] == s)
+              	return (node[j].f);
 }
         return (NULL);
 }
