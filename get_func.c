@@ -7,6 +7,7 @@
 
 int (*get_func(char s))(va_list)
 {
+	int j = 0;
         node_t node[] = {
                 {"c", print_c},
                 {"s", print_s},
@@ -17,12 +18,11 @@ int (*get_func(char s))(va_list)
                 {NULL, NULL}
         };
 
-        int j;
-	
-	for (j = 0; node[j].c != NULL; j++)
+	while (node[j].c)
 {
-               if (*node[j].c[0] == s)
+               if (node[j].c[0] == s)
               	return (node[j].f);
+	       j++;
 }
         return (NULL);
 }
