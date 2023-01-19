@@ -11,10 +11,9 @@ int (*get_func(char s))(va_list)
         node_t node[] = {
                 {"c", print_c},
                 {"s", print_s},
+                {"%", print_percent},
                 {"d", print_d},
                 {"i", print_i},
-                {"b", print_b},
-		{"%", print_percent},
                 {NULL, NULL}
         };
 
