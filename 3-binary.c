@@ -11,7 +11,7 @@ int print_b(va_list args)
 	unsigned int i, count, Num, binary, arr[32];
 
 	i = 0, count = 0;
-	Num = va_arg(binary_list, int);
+	Num = va_arg(args, int);
 
 	if (Num < 1)
 	{
