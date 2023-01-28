@@ -8,6 +8,14 @@
 #include <stdio.h>
 #include <limits.h>
 
+#define UNUSED(x) (void)(x)
+#define BUFF_SIZE 1024
+
+#define F_MINUS 1
+#define F_PLUS 2
+#define F_ZERO 4
+#define F_HASH 8
+#define F_SPACE 16
 /**
 * struct op - flag / function object
 * @c: flag
@@ -33,4 +41,6 @@ int print_o(va_list args);
 int print_x(va_list args);
 int print_X(va_list args);
 int print_percent(va_list args);
+int get_flags(const char *format, int *x);
+int get_precision(const char *format, int *x, va_list args);
 #endif
