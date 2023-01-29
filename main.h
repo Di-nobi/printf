@@ -3,19 +3,23 @@
 
 #include <stdlib.h>
 #include <stdarg.h>
-
+#include <ctype.h>
 /**
  * struct flags - struct containing flags to "turn on"
  * when a flag specifier is passed to _printf()
  * @plus: flag for the '+' character
  * @space: flag for the ' ' character
  * @hash: flag for the '#' character
+ * @minus: flag for the '-' character
+ * @zero: flag for the '0' character
  */
 typedef struct flags
 {
 	int plus;
 	int space;
 	int hash;
+	int minus;
+	int zero;
 } flags_t;
 
 /**
@@ -61,7 +65,7 @@ int print_char(va_list l, flags_t *f);
 /* write_funcs */
 int _putchar(char c);
 int _puts(char *str);
-
+int is_digit(char c);
 /* print_custom */
 int print_rot13(va_list l, flags_t *f);
 int print_rev(va_list l, flags_t *f);
@@ -72,5 +76,8 @@ int print_address(va_list l, flags_t *f);
 
 /* print_percent */
 int print_percent(va_list l, flags_t *f);
-
+/*Function specifier*/
+int get_width(const char *format, int *i, va_list list);
+int get_precision(const char *format, int *i, va_list list);
+int get_flags(const char *format, int *i);
 #endif
